@@ -49,6 +49,16 @@
             padding: 10px;
             font-size: 16px;
             border-radius: 5px;
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            background-color: #ffffff;
+            border: 1px solid #007bff; /* 蓝色边框 */
+            color: #333;
+        }
+
+        #os-select::-ms-expand {
+            display: none; /* 隐藏IE的下拉箭头 */
         }
     </style>
 </head>
@@ -61,8 +71,8 @@
         <p>Core Release 0.5.9</p>
 
         <select id="os-select">
-            <option value="windows">适用于Windows</option>
-            <option value="mac">适用于Mac</option>
+            <option value="windows">Windows</option>
+            <option value="mac">Mac</option>
         </select>
 
         <a href="#" class="download-button" id="download-button">立即下载</a>
