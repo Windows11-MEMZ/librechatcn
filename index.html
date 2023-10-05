@@ -34,7 +34,6 @@
             border-radius: 5px;
             font-size: 18px;
             margin-top: 20px;
-            margin-right: 10px;
         }
 
         .download-button:hover {
@@ -43,15 +42,6 @@
 
         .screenshot {
             margin-top: 40px;
-        }
-
-        .footer {
-            background-color: #007bff; /* 蓝色主题色 */
-            color: white;
-            padding: 10px 0;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
         }
     </style>
 </head>
@@ -62,8 +52,14 @@
         <p>Installer Release 1.0.0</p>
         <p>Client Release 1.0.0</p>
         <p>Core Release 0.5.9</p>
-        <a href="#" class="download-button">立即下载(适用于Windows)</a>
-        <a href="#" class="download-button">立即下载(适用于Mac)</a>
+
+        <select id="os-select">
+            <option value="windows">Windows</option>
+            <option value="mac">Mac</option>
+        </select>
+
+        <a href="#" class="download-button" id="download-button">立即下载</a>
+
         <div class="screenshot">
             <h2>软件截图</h2>
             <!-- <img src="screenshot1.jpg" alt="Screenshot 1">
@@ -72,11 +68,19 @@
         </div>
     </div>
 
-    <div class="footer">
-        <div class="container">
-            <!-- 这里的版权信息已被移除 -->
-        </div>
-    </div>
+    <script>
+        document.getElementById("download-button").addEventListener("click", function() {
+            var selectedOS = document.getElementById("os-select").value;
+            // 根据选择的操作系统执行相应的下载操作
+            if (selectedOS === "windows") {
+                // 执行Windows下载操作
+                // window.location.href = "windows-download-link";
+            } else if (selectedOS === "mac") {
+                // 执行Mac下载操作
+                // window.location.href = "mac-download-link";
+            }
+        });
+    </script>
 </body>
 
 </html>
